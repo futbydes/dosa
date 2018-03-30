@@ -1,3 +1,4 @@
-echo "crontab -l 0 4 * * 0 >> sudo apt-get update >> /var/log/update_script.log && sudo apt-get upgrade --assume-yes >> /var/log/update_script.log" >> cront
-sh cront
+sudo crontab -l > cront
+echo "0 4 * * 0 sudo apt-get update >> /var/log/update_script.log && sudo apt-get upgrade --assume-yes >> /var/log/update_script.log" >> cront
+sudo crontab cront
 rm cront
