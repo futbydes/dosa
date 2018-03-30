@@ -1,1 +1,1 @@
-/usr/sbin/service status
+service ssh status

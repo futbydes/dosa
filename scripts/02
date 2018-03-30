@@ -1,4 +1,3 @@
-sudo apt-get update >> /var/log/update_script.log
-sudo apt-get upgrade --assume-yes >> /var/log/update_script.log
-
-(crontab -l 2>/dev/null; echo "* 4 * * 0 2 /path/to/job") | crontab -
+echo "crontab -l 0 4 * * 0 >> sudo apt-get update >> /var/log/update_script.log && sudo apt-get upgrade --assume-yes >> /var/log/update_script.log" >> cront
+sh cront
+rm cront

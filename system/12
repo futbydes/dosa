@@ -1,1 +1,1 @@
-du -sh -- * .*
+sudo du -h /var/*
