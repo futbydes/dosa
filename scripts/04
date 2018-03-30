@@ -1,0 +1,9 @@
+sudo crontab -l > cront
+echo "0 0 * * * \
+oldsum=\"\$(md5sum /etc/crontab | awk '{ print \$1 }')\" && \
+newsum=\"\$(cat /etc/crontab.log)\" && \
+  if [ '\$newsum' != '\$oldsum' ] ; then \
+	  md5sum /etc/crontab | awk '{ print \$1 }' > /etc/crontab.log && \
+	  echo 'crontab file is modified' | mail -s 'modified' root ; fi" >> cront
+sudo crontab cront
+rm cront
