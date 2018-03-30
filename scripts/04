@@ -1,4 +1,3 @@
-sudo crontab -l > cront
 echo "0 0 * * * \
 oldsum=\"\$(md5sum /etc/crontab | awk '{ print \$1 }')\" && \
 newsum=\"\$(cat /etc/crontab.log)\" && \
